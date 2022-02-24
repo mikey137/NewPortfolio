@@ -1,5 +1,6 @@
 import {React, useState} from 'react';
 import './portfolio.css'
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
@@ -8,8 +9,10 @@ import albert from '/Users/michaelhulme/projects/porfolio/src/images/albert.png'
 import mentalHealth from '/Users/michaelhulme/projects/porfolio/src/images/mentalHealth.png'
 import coaching from '/Users/michaelhulme/projects/porfolio/src/images/tf.png'
 import robot from '/Users/michaelhulme/projects/porfolio/src/images/robotWhite.png'
+import buddha from '/Users/michaelhulme/projects/porfolio/src/images/buddha3.png'
 
 export default function Portfolio(){
+    const [isNavBarDisplayed, setIsNavBarDisplayed] = useState(false)
     const [displayedAboutItem, setDisplayedAboutItem] = useState()
     const [displayedProject, setDisplayedProject] = useState()
     const [isProjectDisplayed, setIsProjectDisplayed] = useState(false)
@@ -244,17 +247,67 @@ export default function Portfolio(){
 
     return(
         <div className="outer">
-            <div className="background"></div>
-            <div className="main-content">
-                <div className="section landing">
+            <img 
+                onClick={() => setIsNavBarDisplayed(!isNavBarDisplayed)}
+                src={buddha} alt="buddha" className="navbar-icon" 
+            />
+            <div className={isNavBarDisplayed ? "navbar-displayed" : "navbar"}>
+                <div className="navbar-title">contents</div>
+                <ol className="navbar-ol">
+                    <li className="navbar-element">
+                        <Link 
+                            activeClass="active" 
+                            to="home" 
+                            spy={true} 
+                            smooth={true}
+                        >   
+                            Home
+                        </Link>
+                    </li>
+                    <li className="navbar-element"> 
+                        <Link 
+                            activeClass="active" 
+                            to="about" 
+                            spy={true} 
+                            smooth={true}
+                        >   
+                            about
+                        </Link>
+                    </li>
+                    <li className="navbar-element">
+                        <Link 
+                            activeClass="active" 
+                            to="projects" 
+                            spy={true} 
+                            smooth={true}
+                        >   
+                            projects
+                        </Link>
+                    </li>
+                    <li className="navbar-element">
+                        <Link 
+                            activeClass="active" 
+                            to="contact" 
+                            spy={true} 
+                            smooth={true}
+                        >   
+                            contact
+                        </Link>
+                    </li>
+                </ol>
+            </div>
+            <div 
+                className="main-content">
+                <div className="background"></div>
+                <Element name="home" className="section landing">
                     <div className="landing-title">
                         Michael<br/>Hulme
                     </div>
                     <div className="landing-subtitle">
                         Software<br/>Developer
                     </div>
-                </div>
-                <div className="section about">
+                </Element>
+                <Element name="about" className="section about">
                     <div className="section-title">
                         about
                     </div>
@@ -281,8 +334,8 @@ export default function Portfolio(){
                         </div>
                     </div>
                     {displayedAboutItem}
-                </div>
-                <div className="section projects">
+                </Element>
+                <Element name="projects" className="section projects">
                     <div className="section-title">
                         projects
                     </div>
@@ -309,8 +362,8 @@ export default function Portfolio(){
                         </div>
                     </div>
                     {displayedProject}
-                </div>
-                <div className="section contact">
+                </Element>
+                <Element name="contact" className="section contact">
                     <div className="section-title">
                         contact
                     </div>
@@ -330,7 +383,7 @@ export default function Portfolio(){
                             <FontAwesomeIcon className='social-media-icon' icon={ faLinkedin }/>
                         </a>
                     </div>
-                </div>
+                </Element>
             </div>
         </div>
     )
