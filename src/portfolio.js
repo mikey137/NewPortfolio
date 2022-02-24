@@ -65,6 +65,14 @@ export default function Portfolio(){
         }, 2000)
     }
 
+    const handleButtonFail = () => {
+        document.querySelector('.project-title:last-child').classList.add('falling')
+
+        setTimeout(() => {
+            document.querySelector('.project-title:last-child').classList.remove('falling')
+        }, 6000)
+    }
+
     const educationContent = (
         <div className="project-content">
             <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
@@ -250,7 +258,7 @@ export default function Portfolio(){
                     <div className="section-title">
                         about
                     </div>
-                    <div className="project-container">
+                    <div className="section-container">
                         <div className="paragraph-with-backdrop-boxshadow">
                             I'm in the process of tranistioning from a career in mental health to one as a software developer. I have recently completed a boot camp and I'm continuing to build my skill set by taking an advanced javascript course, as well as wokring on an NFT project. My ideal position would be one where I can learn from someone with more experience, but also be given personal resposiblities and be expected to complete tasks independently. 
                         </div>
@@ -277,7 +285,7 @@ export default function Portfolio(){
                     <div className="section-title">
                         projects
                     </div>
-                    <div className="project-container">
+                    <div className="section-container">
                         <img 
                             className={`zen-circle ${zenCircleRotationDirection}`}  
                             src={zenCircle} 
@@ -294,7 +302,8 @@ export default function Portfolio(){
                         <div onClick={() => {handleDisplayProject(emotionalConceptsContent)}}className={isProjectDisplayed ? "project-title move-left" : "project-title from-left" }>
                             Emotional Concepts
                         </div>
-                        <div className={isProjectDisplayed ? "project-title move-right" : "project-title from-right" }>
+                        <div onClick={() => {handleButtonFail()}} 
+                        className={isProjectDisplayed ? "project-title move-right" : "project-title from-right" }>
                             Under Construction
                         </div>
                     </div>

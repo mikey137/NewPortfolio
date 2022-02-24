@@ -73,12 +73,23 @@
   color: var(--white-color);
 }
 
+.section-container {
+  position: relative;
+  width: 100vw;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ABOUT SECTION */
 
 .paragraph-with-backdrop-boxshadow {
   padding: 0.6rem;
   color: var(--white-color);
   width: 90%;
+  max-width: 500px;
   font-size: 1.1rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
@@ -215,16 +226,6 @@ ol {
 
 /* PROJECT SECTION */
 
-.project-container {
-  position: relative;
-  width: 100vw;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .zen-circle {
   width: 95vw;
   max-width: 600px;
@@ -337,6 +338,7 @@ ol {
   border-radius: 1rem;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
   width: 90%;
+  max-width: 500px;
 }
 
 @keyframes fromBottom {
@@ -405,6 +407,48 @@ ol {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.falling {
+  animation: falling 5s ease-in-out forwards;
+  transform-origin: right;
+}
+
+@keyframes falling {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(-110deg);
+  }
+  20% {
+    transform: rotate(-60deg);
+  }
+  30% {
+    transform: rotate(-105deg);
+  }
+  40% {
+    transform: rotate(-70deg);
+  }
+  50% {
+    transform: rotate(-100deg);
+  }
+  60% {
+    transform: rotate(-75deg);
+  }
+  70% {
+    transform: rotate(-95deg);
+  }
+  80% {
+    transform: rotate(-80deg);
+  }
+  90% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(-90deg) translateX(-700px);
+  }
 }
 
 /* CONTACT SECTION */
@@ -502,4 +546,30 @@ ol {
 
 .social-media-icon:active {
   transform: scale(0.97);
+}
+
+@media only screen and (min-width: 600px) {
+  .landing-title {
+    font-size: 7.5rem;
+  }
+
+  .landing-subtitle {
+    font-size: 3.4rem;
+  }
+
+  .section-title {
+    font-size: 5rem;
+  }
+
+  .paragraph-with-backdrop-boxshadow {
+    font-size: 1.8rem;
+  }
+
+  .about-item {
+    font-size: 2.5rem;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+  }
 }
