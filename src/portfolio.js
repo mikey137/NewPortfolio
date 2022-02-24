@@ -260,6 +260,7 @@ export default function Portfolio(){
                     </div>
                     <div className="section-container">
                         <div className="paragraph-with-backdrop-boxshadow">
+                            <div className="underlined-title">who am i?</div>
                             I'm in the process of tranistioning from a career in mental health to one as a software developer. I have recently completed a boot camp and I'm continuing to build my skill set by taking an advanced javascript course, as well as wokring on an NFT project. My ideal position would be one where I can learn from someone with more experience, but also be given personal resposiblities and be expected to complete tasks independently. 
                         </div>
                         <div className="about-item" onClick={() => handleDisplayAboutItem(educationContent)}>
