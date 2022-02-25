@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
 import './portfolio.css'
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
@@ -195,8 +195,8 @@ export default function Portfolio(){
                 <FontAwesomeIcon className="project-tech-icon" icon={faGithub}/>
             </div>
             <div className="btn-container">
-                <a href="https://little-legumes.herokuapp.com/" target="_blank" className="btn">Visit Site</a>
-                <a href="https://github.com/mikey137/Little_Legumes_App" target="_blank" className="btn">View Code</a>
+                <a href="https://little-legumes.herokuapp.com/" target="_blank" rel="noreferrer" className="btn">Visit Site</a>
+                <a href="https://github.com/mikey137/Little_Legumes_App" target="_blank" rel="noreferrer" className="btn">View Code</a>
             </div>
         </div>
     )
@@ -216,8 +216,8 @@ export default function Portfolio(){
                 <FontAwesomeIcon className="project-tech-icon" icon={faGithub}/>
             </div>
             <div className="btn-container">
-                <a href="http://supercardsnft.herokuapp.com/" target="_blank" className="btn">Visit Site</a>
-                <a href="https://github.com/Ben8842/asg" target="_blank" className="btn">View Code</a>
+                <a href="http://supercardsnft.herokuapp.com/" target="_blank" rel="noreferrer" className="btn">Visit Site</a>
+                <a href="https://github.com/Ben8842/asg" target="_blank" rel="noreferrer" className="btn">View Code</a>
             </div>
         </div>
     )
@@ -239,8 +239,8 @@ export default function Portfolio(){
                 <FontAwesomeIcon className="project-tech-icon" icon={faGithub}/>
             </div>
             <div className="btn-container">
-                <a href="https://mikey137.github.io/EmotionsAPI/index.html" target="_blank" className="btn">Visit Site</a>
-                <a href="https://github.com/mikey137/EmotionsAPI" target="_blank" className="btn">View Code</a>
+                <a href="https://mikey137.github.io/EmotionsAPI/index.html" target="_blank" rel="noreferrer" className="btn">Visit Site</a>
+                <a href="https://github.com/mikey137/EmotionsAPI" target="_blank" rel="noreferrer" className="btn">View Code</a>
             </div>
         </div>
     )
@@ -376,10 +376,10 @@ export default function Portfolio(){
                         <button className="btn">Submit</button>
                     </div>
                     <div className="icons-container">
-                        <a target="_blank" href="https://github.com/mikey137">
+                        <a target="_blank" rel="noreferrer" href="https://github.com/mikey137">
                             <FontAwesomeIcon className='social-media-icon' icon={ faGithub }/>
                         </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/michael-hulme-63b81a214/">
+                        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/michael-hulme-63b81a214/">
                             <FontAwesomeIcon className='social-media-icon' icon={ faLinkedin }/>
                         </a>
                     </div>
