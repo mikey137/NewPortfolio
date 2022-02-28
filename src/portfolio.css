@@ -558,7 +558,7 @@ ol {
 
 /* CONTACT SECTION */
 
-.contact-form {
+.contact-form-wrapper {
   width: 85%;
   display: flex;
   flex-direction: column;
@@ -566,8 +566,16 @@ ol {
   align-items: center;
 }
 
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .form__input {
-  margin: 0 1% 15px 0;
+  margin-top: 15px;
   height: 40px;
   width: 100%;
   max-width: 500px;
@@ -591,7 +599,7 @@ ol {
   font-family: var(--primary-font);
 }
 
-#field {
+.field {
   height: 200px;
   width: 100%;
 }
@@ -656,6 +664,49 @@ ol {
 
 .social-media-icon:active {
   transform: scale(0.97);
+}
+
+.errorMessage {
+  font-size: 1.1rem;
+  color: red;
+  background-color: rgba(248, 248, 255, 0.8);
+  text-transform: uppercase;
+  font-family: var(--primary-font);
+  letter-spacing: 1px;
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+  padding: 1%;
+}
+
+.message-sent-alert {
+  background-color: rgba(159, 266, 191, 0.8);
+  color: var(--white-color);
+  padding: 15px 30px;
+  border: 3px solid var(--white-color);
+  border-radius: 20px;
+  box-shadow: -10px -5px 10px 5px rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+  animation: sentAlert 6s ease-in-out forwards;
+}
+
+@keyframes sentAlert {
+  0% {
+    right: -100%;
+  }
+  10% {
+    right: 50px;
+  }
+  90% {
+    right: 50px;
+  }
+  100% {
+    right: -100%;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -734,6 +785,7 @@ ol {
     width: 20vw;
     background-color: transparent;
     box-shadow: none;
+    animation: none;
   }
 
   .navbar-title {
@@ -746,6 +798,12 @@ ol {
 
   .navbar-icon {
     display: none;
+  }
+
+  .message-sent-alert {
+    bottom: 200px;
+    right: 50px;
+    font-size: 1.5rem;
   }
 }
 
