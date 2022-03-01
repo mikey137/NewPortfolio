@@ -18,7 +18,7 @@ export default function Portfolio(){
     const [displayedProject, setDisplayedProject] = useState()
     const [isProjectDisplayed, setIsProjectDisplayed] = useState(false)
     const [zenCircleRotationDirection, setZenCircleRoationDirection] = useState()
-        
+    
     const handleDisplayProject = (project) => {
         setZenCircleRoationDirection('rotate-clockwise')
 
@@ -171,10 +171,7 @@ export default function Portfolio(){
                 <div className="regular-paragraph-left">communication, pattern recognition</div>
                 <div className="paragraph-title">Job Description:</div>
                 <div className="regular-paragraph-left">
-                    All things related to running an Intensive Residential Treatment Program for teenage girls who struggle with suicidal ideation, eating disorders, or other self injurious behavior. My primary responsibilities were to manage the staff on shift, intervine when a resident is in crisis, and facilitate communication between the various departments in the program.  
-                    <br/>
-                    <br/>
-                    The ability to identify patterns of behavior in the residents was crucial to managing their behavior. While the ability collaborate effectively accross deparrments greatly improved the efficay of our treatment plans.
+                    The key to success as a coach was effective communication as well as aligning the goals of individual athletes with the goals of the team. In addition to the athletes, athletic trainers, strength coaches and even parents had to buy into the overall vision for the team. 
                 </div>   
             </div>
         </div>
@@ -310,12 +307,18 @@ export default function Portfolio(){
                 </Element>
                 <Element name="about" className="section about">
                     <div className="section-title">
-                        about
+                        about me
                     </div>
                     <div className="section-container">
                         <div className="paragraph-with-backdrop-boxshadow">
-                            <div className="underlined-title">who am i?</div>
-                            I'm in the process of tranistioning from a career in mental health to one as a software developer. I have recently completed a boot camp and I'm continuing to build my skill set by taking an advanced javascript course, as well as wokring on an NFT project. My ideal position would be one where I can learn from someone with more experience, but also be given personal resposiblities and be expected to complete tasks independently. 
+                            <div className="underlined-title-small">what am i passionate about?</div>
+                            Learning, I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development there is always new technologies to learn or existing technologies to gain a deeper understanding of.
+                            <div className="underlined-title-small">what makes me unquie?</div>
+                            My experience working in a psychiatric hospital. While this doesn’t seem to related to software development, I honed a number of soft skills during this time, including active listening, setting up systems of communication, how too managing and motivating employees. 
+                            <div className="underlined-title-small">what am i looking for?</div>
+                            A position that allows me to grow and expand my skill set while working with a creative group of people.
+
+
                         </div>
                         <div className="about-item" onClick={() => handleDisplayAboutItem(educationContent)}>
                             <img className = "about-img" src={albert} alt="albert" />
