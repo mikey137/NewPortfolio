@@ -774,7 +774,7 @@ ol {
 
 @media only screen and (min-width: 1000px) {
   .landing-title {
-    font-size: 16rem;
+    font-size: 15rem;
   }
 
   .main-content {
@@ -798,11 +798,11 @@ ol {
   }
 
   .navbar-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .navbar-element {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .navbar-icon {
@@ -812,7 +812,7 @@ ol {
   .message-sent-alert {
     bottom: 200px;
     right: 50px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .underlined-title-small {
