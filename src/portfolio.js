@@ -5,12 +5,12 @@ import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
-import zenCircle from '/Users/michaelhulme/projects/porfolio/src/images/greyZenCircle.png'
-import albert from '/Users/michaelhulme/projects/porfolio/src/images/albert.png'
-import mentalHealth from '/Users/michaelhulme/projects/porfolio/src/images/mentalHealth.png'
-import coaching from '/Users/michaelhulme/projects/porfolio/src/images/tf.png'
-import robot from '/Users/michaelhulme/projects/porfolio/src/images/robotWhite.png'
-import buddha from '/Users/michaelhulme/projects/porfolio/src/images/buddha3.png'
+import zenCircle from './images/greyZenCircle.png'
+import albert from './images/albert.png'
+import mentalHealth from './images/mentalHealth.png'
+import coaching from './images/tf.png'
+import robot from './images/robotWhite.png'
+import buddha from './images/buddha3.png'
 
 export default function Portfolio(){
     const [isNavBarDisplayed, setIsNavBarDisplayed] = useState(false)
@@ -346,7 +346,7 @@ export default function Portfolio(){
                     <div className="section-container">
                         <img 
                             className={`zen-circle ${zenCircleRotationDirection}`}  
-                            src={zenCircle} 
+                            src={zenCircle}
                             alt="Zen Circle" 
                         />
                         <div 
