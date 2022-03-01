@@ -53,7 +53,7 @@ export default function Portfolio(){
         
         setTimeout(() => {
             setDisplayedAboutItem(displayedItem)
-        }, 500)
+        }, 250)
     }
 
     const handleUndisplayAboutItem = () => {
@@ -66,7 +66,7 @@ export default function Portfolio(){
                 item.classList.remove('mute')
             }) 
             setDisplayedAboutItem('')
-        }, 2000)
+        }, 1000)
     }
 
     const handleButtonFail = () => {
