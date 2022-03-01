@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect, useRef} from 'react';
 import './portfolio.css'
 import ContactForm from './components/contactForm';
 import { Link, Element } from 'react-scroll'
@@ -15,9 +15,36 @@ import buddha from './images/buddha3.png'
 export default function Portfolio(){
     const [isNavBarDisplayed, setIsNavBarDisplayed] = useState(false)
     const [displayedAboutItem, setDisplayedAboutItem] = useState()
+    const [isAboutItemDisplayed, setIsAboutItemDisplayed] =useState(false)
     const [displayedProject, setDisplayedProject] = useState()
     const [isProjectDisplayed, setIsProjectDisplayed] = useState(false)
     const [zenCircleRotationDirection, setZenCircleRoationDirection] = useState()
+
+    const ref = useRef()
+
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+            if(isProjectDisplayed && ref.current && !ref.current.contains(e.target)){
+                handleUndisplayProject()
+            }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return() => {
+            document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [isProjectDisplayed])
+
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+            if(isAboutItemDisplayed && ref.current && !ref.current.contains(e.target)){
+                handleUndisplayAboutItem()
+            }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return() => {
+            document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [isAboutItemDisplayed])
     
     const handleDisplayProject = (project) => {
         setZenCircleRoationDirection('rotate-clockwise')
@@ -40,6 +67,7 @@ export default function Portfolio(){
     }
 
     const handleDisplayAboutItem = (displayedItem) => {
+        setIsAboutItemDisplayed(true)
         let aboutItems = document.querySelectorAll('.about-item')
         document.querySelector('.paragraph-with-backdrop-boxshadow').classList.add('mute')
 
@@ -53,6 +81,7 @@ export default function Portfolio(){
     }
 
     const handleUndisplayAboutItem = () => {
+        setIsAboutItemDisplayed(false)
         let aboutItems = document.querySelectorAll('.about-item')
         document.querySelector('.project-content').classList.add('move-down')
 
@@ -74,7 +103,7 @@ export default function Portfolio(){
     }
 
     const educationContent = (
-        <div className="project-content">
+        <div className="project-content" ref={ref}>
             <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
             <div className="school">
                 <div className="underlined-title">University of North Carolina, Wilmington</div>
@@ -103,7 +132,7 @@ export default function Portfolio(){
     )
 
     const technologiesContent = (
-        <div className="project-content">
+        <div className="project-content" ref={ref}>
             <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
             <div className="technologies-container">
                 <div className="tech-container">
@@ -135,7 +164,7 @@ export default function Portfolio(){
     )
 
     const mentalHealthContent = (
-        <div className="project-content">
+        <div className="project-content" ref={ref}>
             <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
             <div className="school">
                 <div className="underlined-title">Cohannet Academy</div>
@@ -154,7 +183,7 @@ export default function Portfolio(){
     )
 
     const coachingContent = (
-        <div className="project-content">
+        <div className="project-content" ref={ref}>
             <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
             <div className="school">
                 <div className="underlined-title-small">Bryant University</div>
@@ -174,7 +203,7 @@ export default function Portfolio(){
     )
 
     const littleLegumesContent = (
-        <div className="project-content">
+        <div className="project-content" ref={ref}>
             <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayProject()}}icon={faClose} />
             <div className="underlined-title">
                 little legumes
@@ -196,7 +225,7 @@ export default function Portfolio(){
     )
 
     const superCardsContent = (
-        <div className="project-content">
+        <div className="project-content" ref={ref}>
             <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayProject()}}icon={faClose} />
             <div className="underlined-title">
                 Super Cards NFT
@@ -217,7 +246,7 @@ export default function Portfolio(){
     )
 
     const emotionalConceptsContent = (
-        <div className="project-content">
+        <div className="project-content" ref={ref}>
             <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayProject()}}icon={faClose} />
             <div className="underlined-title">
                 Emotional Concepts 
@@ -254,6 +283,7 @@ export default function Portfolio(){
                             to="home" 
                             spy={true} 
                             smooth={true}
+                            onClick={() => setIsNavBarDisplayed(false)}
                         >   
                             Home
                         </Link>
@@ -264,6 +294,7 @@ export default function Portfolio(){
                             to="about" 
                             spy={true} 
                             smooth={true}
+                            onClick={() => setIsNavBarDisplayed(false)}
                         >   
                             about
                         </Link>
@@ -274,6 +305,7 @@ export default function Portfolio(){
                             to="projects" 
                             spy={true} 
                             smooth={true}
+                            onClick={() => setIsNavBarDisplayed(false)}
                         >   
                             projects
                         </Link>
@@ -284,6 +316,7 @@ export default function Portfolio(){
                             to="contact" 
                             spy={true} 
                             smooth={true}
+                            onClick={() => setIsNavBarDisplayed(false)}
                         >   
                             contact
                         </Link>
