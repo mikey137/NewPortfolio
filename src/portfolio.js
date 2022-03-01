@@ -26,11 +26,7 @@ export default function Portfolio(){
         
         setTimeout(() => {
             setDisplayedProject(project)
-        },2000)
-
-        setTimeout(() => {
-            
-        },4000)
+        },1000)
     }
 
     const handleUndisplayProject = () => {
@@ -316,7 +312,7 @@ export default function Portfolio(){
                             </div>
                             <div className="underlined-title-small">what makes me unquie?</div>
                             <div className="paragraph-no-margin">
-                            My experience working in a psychiatric hospital. While this doesn’t seem to related to software development, I honed a number of soft skills during this time, including active listening, setting up systems of communication, how to manage and motivate employees. 
+                            My experience working in a psychiatric hospital. I honed a number of soft skills during this time, including active listening, setting up systems of communication, how to manage and motivate employees. 
                             </div>
                             <div className="underlined-title-small">what am i looking for?</div>
                             <div className="paragraph-no-margin">

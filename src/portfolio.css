@@ -209,6 +209,7 @@
 
 .paragraph-no-margin {
   font-family: var(--primary-font);
+  margin-bottom: 1rem;
 }
 
 .about-item {
@@ -227,6 +228,7 @@
   border-radius: 10px;
   padding: 0 1rem;
   animation: unmute 2s ease forwards;
+  cursor: pointer;
 }
 
 .about-img {
@@ -388,6 +390,7 @@ ol {
   letter-spacing: 3px;
   border-radius: 10px;
   padding: 0 1rem;
+  cursor: pointer;
 }
 
 .move-left {
