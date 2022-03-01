@@ -3,7 +3,7 @@ import './portfolio.css'
 import ContactForm from './components/contactForm';
 import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 import zenCircle from './images/greyZenCircle.png'
 import albert from './images/albert.png'
@@ -312,13 +312,16 @@ export default function Portfolio(){
                     <div className="section-container">
                         <div className="paragraph-with-backdrop-boxshadow">
                             <div className="underlined-title-small">what am i passionate about?</div>
-                            Learning, I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development there is always new technologies to learn or existing technologies to gain a deeper understanding of.
+                            <div className="paragraph-no-margin">Learning, I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development there is always new technologies to learn or existing technologies to gain a deeper understanding of.
+                            </div>
                             <div className="underlined-title-small">what makes me unquie?</div>
+                            <div className="paragraph-no-margin">
                             My experience working in a psychiatric hospital. While this doesn’t seem to related to software development, I honed a number of soft skills during this time, including active listening, setting up systems of communication, how too managing and motivating employees. 
+                            </div>
                             <div className="underlined-title-small">what am i looking for?</div>
+                            <div className="paragraph-no-margin">
                             A position that allows me to grow and expand my skill set while working with a creative group of people.
-
-
+                            </div>
                         </div>
                         <div className="about-item" onClick={() => handleDisplayAboutItem(educationContent)}>
                             <img className = "about-img" src={albert} alt="albert" />

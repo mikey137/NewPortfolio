@@ -172,23 +172,6 @@
   transform: scale(0.75);
 }
 
-.navbar-open-animation {
-  animation: tiltIconRight 1s ease-in forwards;
-}
-
-@keyframes tiltIconRight {
-  0%,
-  20% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(45deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 /* LANDING PAGE */
 
 .landing {
@@ -216,12 +199,16 @@
   padding: 0.6rem;
   color: var(--white-color);
   width: 90%;
-  max-width: 500px;
+  max-width: 700px;
   font-size: 1.1rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   animation: unmute 2s ease forwards;
+}
+
+.paragraph-no-margin {
+  font-family: var(--primary-font);
 }
 
 .about-item {
@@ -826,6 +813,10 @@ ol {
     bottom: 200px;
     right: 50px;
     font-size: 1.5rem;
+  }
+
+  .underlined-title-small {
+    font-size: 1.6rem;
   }
 }
 
