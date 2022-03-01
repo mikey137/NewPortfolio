@@ -443,7 +443,7 @@ ol {
 }
 
 .project-content {
-  animation: fromBottom 2s ease-in forwards;
+  animation: fromBottom 1s ease-in forwards;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -465,7 +465,7 @@ ol {
 }
 
 .move-down {
-  animation: moveDown 2s ease-in forwards;
+  animation: moveDown 1s ease-in forwards;
 }
 
 @keyframes moveDown {
@@ -760,15 +760,15 @@ ol {
   }
 
   .paragraph-title {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .regular-paragraph-left {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .regular-paragraph {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
