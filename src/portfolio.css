@@ -52,6 +52,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: transform 0.7s ease-in;
+}
+
+.moved-left {
+  transform: translateX(-100vw);
 }
 
 .section-title {
@@ -448,7 +453,6 @@ ol {
 }
 
 .project-content {
-  animation: fromBottom 1s ease-in forwards;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -458,14 +462,31 @@ ol {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
   width: 90%;
   max-width: 500px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fromSide 0.7s ease-in forwards;
 }
 
-@keyframes fromBottom {
+.to-side {
+  animation: toSide 0.7s ease-in forwards;
+}
+
+@keyframes fromSide {
   from {
-    transform: translateY(0);
+    transform: translate(50vw, -50%);
   }
   to {
-    transform: translateY(-80vh);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes toSide {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: translate(50vw, -50%);
   }
 }
 

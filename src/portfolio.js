@@ -16,23 +16,8 @@ export default function Portfolio(){
     const [isNavBarDisplayed, setIsNavBarDisplayed] = useState(false)
     const [displayedAboutItem, setDisplayedAboutItem] = useState()
     const [isAboutItemDisplayed, setIsAboutItemDisplayed] =useState(false)
-    const [displayedProject, setDisplayedProject] = useState()
-    const [isProjectDisplayed, setIsProjectDisplayed] = useState(false)
-    const [zenCircleRotationDirection, setZenCircleRoationDirection] = useState()
 
     const ref = useRef()
-
-    useEffect(() => {
-        const checkIfClickedOutside = e => {
-            if(isProjectDisplayed && ref.current && !ref.current.contains(e.target)){
-                handleUndisplayProject()
-            }
-        }
-        document.addEventListener("mousedown", checkIfClickedOutside)
-        return() => {
-            document.removeEventListener("mousedown", checkIfClickedOutside)
-        }
-    }, [isProjectDisplayed])
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -46,52 +31,32 @@ export default function Portfolio(){
         }
     }, [isAboutItemDisplayed])
     
-    const handleDisplayProject = (project) => {
-        setZenCircleRoationDirection('rotate-clockwise')
-
-        setIsProjectDisplayed(true)
-        
-        setTimeout(() => {
-            setDisplayedProject(project)
-        },1000)
-    }
-
-    const handleUndisplayProject = () => {
-        setZenCircleRoationDirection('rotate-counter-clockwise')
-        document.querySelector('.project-content').classList.add('move-down')
-
-        setTimeout(() => {
-            setIsProjectDisplayed(false)
-            setDisplayedProject('')
-        }, 2000)
-    }
-
     const handleDisplayAboutItem = (displayedItem) => {
         setIsAboutItemDisplayed(true)
-        let aboutItems = document.querySelectorAll('.about-item')
-        document.querySelector('.paragraph-with-backdrop-boxshadow').classList.add('mute')
-
-        aboutItems.forEach(item => {
-            item.classList.add('mute')
-        }) 
-        
+        const sections = document.querySelectorAll('.section')
+        sections.forEach(section => {
+            section.classList.add('moved-left')
+        })
         setTimeout(() => {
             setDisplayedAboutItem(displayedItem)
-        }, 250)
+            const distanceFromTop = window.scrollY
+            const displayContainer = document.querySelector('.project-content')
+            displayContainer.style.top = `calc(${distanceFromTop}px + 50vh)`    
+        }, 0)
     }
 
     const handleUndisplayAboutItem = () => {
         setIsAboutItemDisplayed(false)
-        let aboutItems = document.querySelectorAll('.about-item')
-        document.querySelector('.project-content').classList.add('move-down')
+        const sections = document.querySelectorAll('.section')
+        
+        sections.forEach(section => {
+            section.classList.remove('moved-left')
+        })
 
-        setTimeout(() => {
-            document.querySelector('.paragraph-with-backdrop-boxshadow').classList.remove('mute')
-            aboutItems.forEach(item => {
-                item.classList.remove('mute')
-            }) 
-            setDisplayedAboutItem('')
-        }, 1000)
+        document.querySelector('.project-content').classList.add('to-side')
+        setTimeout(() => { 
+            setDisplayedAboutItem()
+        },1100)
     }
 
     const handleButtonFail = () => {
@@ -204,7 +169,7 @@ export default function Portfolio(){
 
     const littleLegumesContent = (
         <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayProject()}}icon={faClose} />
+            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
             <div className="underlined-title">
                 little legumes
             </div>
@@ -226,7 +191,7 @@ export default function Portfolio(){
 
     const superCardsContent = (
         <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayProject()}}icon={faClose} />
+            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
             <div className="underlined-title">
                 Super Cards NFT
             </div>
@@ -247,7 +212,7 @@ export default function Portfolio(){
 
     const emotionalConceptsContent = (
         <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayProject()}}icon={faClose} />
+            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
             <div className="underlined-title">
                 Emotional Concepts 
             </div>
@@ -326,6 +291,7 @@ export default function Portfolio(){
             <div 
                 className="main-content">
                 <div className="background"></div>
+                {displayedAboutItem}
                 <Element name="home" className="section landing">
                     <div className="landing-title">
                         Michael<br/>Hulme
@@ -369,35 +335,28 @@ export default function Portfolio(){
                             coaching
                         </div>
                     </div>
-                    {displayedAboutItem}
                 </Element>
                 <Element name="projects" className="section projects">
                     <div className="section-title">
                         projects
                     </div>
                     <div className="section-container">
-                        <img 
-                            className={`zen-circle ${zenCircleRotationDirection}`}  
-                            src={zenCircle}
-                            alt="Zen Circle" 
-                        />
                         <div 
-                            onClick={() => {handleDisplayProject(littleLegumesContent)}}className={isProjectDisplayed ? "project-title move-left" : "project-title from-left" }
+                            onClick={() => {handleDisplayAboutItem(littleLegumesContent)}}className='project-title'
                         >
                             Little Legumes
                         </div>
-                        <div onClick={() => {handleDisplayProject(superCardsContent)}}className={isProjectDisplayed ? "project-title move-right" : "project-title from-right" }>
+                        <div onClick={() => {handleDisplayAboutItem(superCardsContent)}}className="project-title">
                             Super Cards NFT
                         </div>
-                        <div onClick={() => {handleDisplayProject(emotionalConceptsContent)}}className={isProjectDisplayed ? "project-title move-left" : "project-title from-left" }>
+                        <div onClick={() => {handleDisplayAboutItem(emotionalConceptsContent)}}className='project-title'>
                             Emotional Concepts
                         </div>
                         <div onClick={() => {handleButtonFail()}} 
-                        className={isProjectDisplayed ? "project-title move-right" : "project-title from-right" }>
+                        className="project-title">
                             Under Construction
                         </div>
                     </div>
-                    {displayedProject}
                 </Element>
                 <Element name="contact" className="section contact">
                     <div className="section-title">
