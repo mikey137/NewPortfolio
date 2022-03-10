@@ -5,7 +5,6 @@ import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
-import zenCircle from './images/greyZenCircle.png'
 import albert from './images/albert.png'
 import mentalHealth from './images/mentalHealth.png'
 import coaching from './images/tf.png'
@@ -18,6 +17,35 @@ export default function Portfolio(){
     const [isAboutItemDisplayed, setIsAboutItemDisplayed] =useState(false)
 
     const ref = useRef()
+
+    useEffect(() => {
+        if(document.querySelector('.project-content')){
+            let touchStartX = 0
+            let touchEndX = 0
+
+            console.log(touchStartX)
+            
+            const gestureZone = document.querySelector('.project-content')
+
+            gestureZone.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX
+            })
+
+            gestureZone.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX
+                handleGesture()
+            })
+
+            function handleGesture(){
+                if(touchStartX < touchEndX){
+                    handleUndisplayAboutItem()
+                    console.log('swipe')
+                }else{
+                    console.log('no swipe')
+                }
+            }
+        }
+    },[isAboutItemDisplayed])
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
