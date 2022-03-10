@@ -19,22 +19,18 @@ export default function Portfolio(){
     const ref = useRef()
 
     useEffect(() => {
-        if(document.querySelector('.project-content')){
             let touchStartX = 0
             let touchEndX = 0
-
-            console.log(touchStartX)
-            
-            const gestureZone = document.querySelector('.project-content')
-
-            gestureZone.addEventListener('touchstart', (e) => {
+                        
+            document.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX
-            })
+                console.log(touchStartX)
+            },false)
 
-            gestureZone.addEventListener('touchend', (e) => {
+            document.addEventListener('touchend', (e) => {
                 touchEndX = e.changedTouches[0].screenX
                 handleGesture()
-            })
+            },false)
 
             function handleGesture(){
                 if(touchStartX < touchEndX){
@@ -44,7 +40,6 @@ export default function Portfolio(){
                     console.log('no swipe')
                 }
             }
-        }
     },[isAboutItemDisplayed])
 
     useEffect(() => {
