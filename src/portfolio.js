@@ -1,15 +1,18 @@
 import {React, useState, useEffect, useRef} from 'react';
 import './portfolio.css'
-import ContactForm from './components/contactForm';
+import ContactForm from './components/ContactForm';
 import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
-import { faClose } from '@fortawesome/free-solid-svg-icons'
+import { faClose, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import albert from './images/albert.png'
 import mentalHealth from './images/mentalHealth.png'
 import coaching from './images/tf.png'
 import robot from './images/robotWhite.png'
 import buddha from './images/buddha3.png'
+import Project from './components/Project'
+import ProjectsArray from './ProjectsArray'
+
 
 export default function Portfolio(){
     const [isNavBarDisplayed, setIsNavBarDisplayed] = useState(false)
@@ -17,6 +20,18 @@ export default function Portfolio(){
     const [isAboutItemDisplayed, setIsAboutItemDisplayed] =useState(false)
 
     const ref = useRef()
+
+    const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
+
+    window.onscroll = function(){
+        if(window.pageYOffset > 0){
+            let aboutSection = document.getElementsByClassName('section about')[0]
+            let aboutDistanceFromTop = aboutSection.getBoundingClientRect().top
+            let viewPortHeight = document.documentElement.clientHeight
+            let imgOpacity = map(aboutDistanceFromTop, viewPortHeight, 0, 1, 0)
+            document.getElementsByClassName('background')[0].style.opacity = imgOpacity
+        }
+    }
 
     useEffect(() => {
             let touchStartX = 0
@@ -80,14 +95,6 @@ export default function Portfolio(){
         setTimeout(() => { 
             setDisplayedAboutItem()
         },1100)
-    }
-
-    const handleButtonFail = () => {
-        document.querySelector('.project-title:last-child').classList.add('falling')
-
-        setTimeout(() => {
-            document.querySelector('.project-title:last-child').classList.remove('falling')
-        }, 6000)
     }
 
     const educationContent = (
@@ -190,72 +197,6 @@ export default function Portfolio(){
         </div>
     )
 
-    const littleLegumesContent = (
-        <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
-            <div className="underlined-title">
-                little legumes
-            </div>
-            <div className="regular-paragraph">
-                Little Legumes is a clone of the Tiny Beans App(get it! Tiny Beans/Little Legumes). The main feature that is recreated in Little Legumes is an infinitely scrolling calendar which allows the user to save photo's or "moments" from each day. Additionally users are able to select moments and easily email them to a list of family and friends they populate. 
-            </div>
-            <div className="project-technologies-container">
-                <FontAwesomeIcon className="project-tech-icon" icon={faReact}/>
-                <FontAwesomeIcon className="project-tech-icon" icon={faCss3Alt}/>
-                <FontAwesomeIcon className="project-tech-icon" icon={faNode}/>
-                <FontAwesomeIcon className="project-tech-icon" icon={faGithub}/>
-            </div>
-            <div className="btn-container">
-                <a href="https://little-legumes.herokuapp.com/" target="_blank" rel="noreferrer" className="btn">Visit Site</a>
-                <a href="https://github.com/mikey137/Little_Legumes_App" target="_blank" rel="noreferrer" className="btn">View Code</a>
-            </div>
-        </div>
-    )
-
-    const superCardsContent = (
-        <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
-            <div className="underlined-title">
-                Super Cards NFT
-            </div>
-            <div className="regular-paragraph">
-                In this project was a collaboration, the focus was more about practicing some of the soft skills involved in software development and less about the technology. Communicating with other people, sharing ideas, and coming up with a product everyone involved is happy with. In this project we used css and react to algorithmically generate unique smiley faces. We used those faces to create NFTs and posted them on OpenSea. 
-            </div>
-            <div className="project-technologies-container">
-                <FontAwesomeIcon className="project-tech-icon" icon={faReact}/>
-                <FontAwesomeIcon className="project-tech-icon" icon={faCss3Alt}/>
-                <FontAwesomeIcon className="project-tech-icon" icon={faGithub}/>
-            </div>
-            <div className="btn-container">
-                <a href="http://supercardsnft.herokuapp.com/" target="_blank" rel="noreferrer" className="btn">Visit Site</a>
-                <a href="https://github.com/Ben8842/asg" target="_blank" rel="noreferrer" className="btn">View Code</a>
-            </div>
-        </div>
-    )
-
-    const emotionalConceptsContent = (
-        <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
-            <div className="underlined-title">
-                Emotional Concepts 
-            </div>
-            <div className="regular-paragraph">
-                This project is intended to be an interactive emotions wheel. Ideally it will be used by clinicians, occupational therapists, teachers, and parents, to help facilitate conversations about different emotional concepts with their clients, students, kids, ect. The app provides definitions, images, and videos of a variety of different emotions. Not all of the images and videos perfectly represent each emotion, which is fine, the intention isn't to provide exact answers, but to provide a starting place for a conversation.
-            </div>
-            <div className="project-technologies-container">
-                <FontAwesomeIcon className="project-tech-icon" icon={faHtml5}/>
-                <FontAwesomeIcon className="project-tech-icon" icon={faCss3Alt}/>
-                <FontAwesomeIcon className="project-tech-icon" icon={faJs}/>
-                <FontAwesomeIcon className="project-tech-icon" icon={faBootstrap}/>
-                <FontAwesomeIcon className="project-tech-icon" icon={faGithub}/>
-            </div>
-            <div className="btn-container">
-                <a href="https://mikey137.github.io/EmotionsAPI/index.html" target="_blank" rel="noreferrer" className="btn">Visit Site</a>
-                <a href="https://github.com/mikey137/EmotionsAPI" target="_blank" rel="noreferrer" className="btn">View Code</a>
-            </div>
-        </div>
-    )
-
     return(
         <div className="outer">
             <img 
@@ -311,9 +252,10 @@ export default function Portfolio(){
                     </li>
                 </ol>
             </div>
-            <div 
-                className="main-content">
+            <div className="main-content">
                 <div className="background"></div>
+                <div className="background-gradient"></div>
+                <div className="background-color"></div>
                 {displayedAboutItem}
                 <Element name="home" className="section landing">
                     <div className="landing-title">
@@ -363,22 +305,10 @@ export default function Portfolio(){
                     <div className="section-title">
                         projects
                     </div>
-                    <div className="section-container">
-                        <div 
-                            onClick={() => {handleDisplayAboutItem(littleLegumesContent)}}className='project-title'
-                        >
-                            Little Legumes
-                        </div>
-                        <div onClick={() => {handleDisplayAboutItem(superCardsContent)}}className="project-title">
-                            Super Cards NFT
-                        </div>
-                        <div onClick={() => {handleDisplayAboutItem(emotionalConceptsContent)}}className='project-title'>
-                            Emotional Concepts
-                        </div>
-                        <div onClick={() => {handleButtonFail()}} 
-                        className="project-title">
-                            Under Construction
-                        </div>
+                    <div className="projects-array-container">
+                        {ProjectsArray.map((project, index) => (
+                            <Project project = {project} index = {index} key = {project.title}/>
+                        ))}
                     </div>
                 </Element>
                 <Element name="contact" className="section contact">
