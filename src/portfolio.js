@@ -10,8 +10,10 @@ import mentalHealth from './images/mentalHealth.png'
 import coaching from './images/tf.png'
 import robot from './images/robotWhite.png'
 import buddha from './images/buddha3.png'
+import profilePic from './images/profilePic.jpeg'
 import Project from './components/Project'
 import ProjectsArray from './ProjectsArray'
+
 
 export default function Portfolio(){
 
@@ -79,7 +81,7 @@ export default function Portfolio(){
     )
 
     const mentalHealthContent = (
-        <div className="about-content-container">
+        <div className="about-item-container">
             {/* <div className="school">
                 <div className="underlined-title">Cohannet Academy</div>
                 <div className="sub-title">Residential Supervisor 2014-2022</div>
@@ -97,7 +99,7 @@ export default function Portfolio(){
     )
 
     const coachingContent = (
-        <div className="about-content-container">
+        <div className="about-item-container">
             {/* <div className="school">
                 <div className="underlined-title-small">Bryant University</div>
                 <div className="sub-title">Assistant Track and Field Coach 2018-2019</div>

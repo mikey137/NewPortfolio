@@ -228,6 +228,8 @@
   margin: 1rem;
   position: relative;
   overflow: hidden;
+  width: 90wv;
+  max-width: 450px;
 }
 
 @keyframes growShrinkContent {
@@ -406,9 +408,11 @@ ol {
 }
 
 .technologies-container {
-  height: 70vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .tech-container {
