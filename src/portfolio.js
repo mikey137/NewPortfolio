@@ -1,4 +1,4 @@
-import {React, useState, useEffect, useRef} from 'react';
+import {React, useState, useEffect} from 'react';
 import './portfolio.css'
 import ContactForm from './components/ContactForm';
 import { Link, Element } from 'react-scroll'
@@ -13,122 +13,42 @@ import buddha from './images/buddha3.png'
 import Project from './components/Project'
 import ProjectsArray from './ProjectsArray'
 
-
 export default function Portfolio(){
-    const [isNavBarDisplayed, setIsNavBarDisplayed] = useState(false)
-    const [displayedAboutItem, setDisplayedAboutItem] = useState()
-    const [isAboutItemDisplayed, setIsAboutItemDisplayed] =useState(false)
-
-    const ref = useRef()
-
-    const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
-
-    window.onscroll = function(){
-        if(window.pageYOffset > 0){
-            let aboutSection = document.getElementsByClassName('section about')[0]
-            let aboutDistanceFromTop = aboutSection.getBoundingClientRect().top
-            let viewPortHeight = document.documentElement.clientHeight
-            let imgOpacity = map(aboutDistanceFromTop, viewPortHeight, 0, 1, 0)
-            document.getElementsByClassName('background')[0].style.opacity = imgOpacity
-        }
-    }
-
-    useEffect(() => {
-            let touchStartX = 0
-            let touchEndX = 0
-                        
-            document.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX
-                console.log(touchStartX)
-            },false)
-
-            document.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX
-                handleGesture()
-            },false)
-
-            function handleGesture(){
-                if(touchStartX < touchEndX){
-                    handleUndisplayAboutItem()
-                    console.log('swipe')
-                }else{
-                    console.log('no swipe')
-                }
-            }
-    },[isAboutItemDisplayed])
-
-    useEffect(() => {
-        const checkIfClickedOutside = e => {
-            if(isAboutItemDisplayed && ref.current && !ref.current.contains(e.target)){
-                handleUndisplayAboutItem()
-            }
-        }
-        document.addEventListener("mousedown", checkIfClickedOutside)
-        return() => {
-            document.removeEventListener("mousedown", checkIfClickedOutside)
-        }
-    }, [isAboutItemDisplayed])
-    
-    const handleDisplayAboutItem = (displayedItem) => {
-        setIsAboutItemDisplayed(true)
-        const sections = document.querySelectorAll('.section')
-        sections.forEach(section => {
-            section.classList.add('moved-left')
-        })
-        setTimeout(() => {
-            setDisplayedAboutItem(displayedItem)
-            const distanceFromTop = window.scrollY
-            const displayContainer = document.querySelector('.project-content')
-            displayContainer.style.top = `calc(${distanceFromTop}px + 50vh)`    
-        }, 0)
-    }
-
-    const handleUndisplayAboutItem = () => {
-        setIsAboutItemDisplayed(false)
-        const sections = document.querySelectorAll('.section')
-        
-        sections.forEach(section => {
-            section.classList.remove('moved-left')
-        })
-
-        document.querySelector('.project-content').classList.add('to-side')
-        setTimeout(() => { 
-            setDisplayedAboutItem()
-        },1100)
-    }
 
     const educationContent = (
-        <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
+        <div className="about-item-container">
             <div className="school">
-                <div className="underlined-title">University of North Carolina, Wilmington</div>
+                <h3>University of North Carolina, Wilmington</h3>
                 <div className="sub-title">Bachelor of Science in Applied Mathematics</div>
-                <div className="list-title">Area's of Study:</div>
+                {/* <div className="list-title">Area's of Study:</div>
                 <ol id="studies-list">
                     <li>Fermat's Last Theorem for the case n=3</li>
                     <li>Partial Differential Equations</li>
                     <li>Vector Calculus</li>
                     <li>Abstract Algebra</li>
-                </ol> 
+                </ol>  */}
             </div>
             <div className="school">
-                <div className="underlined-title">Bridgewater State University</div>
+                <h3>Bridgewater State University</h3>
                 <div className="sub-title">Master of Science in Strength and Conditioning</div>
                 
-                <div className="list-title">Area's of Study:</div>
+                {/* <div className="list-title">Area's of Study:</div>
                 <ol id="studies-list">
                     <li>Olympic Lifting for College Athletes</li>
                     <li>Rest and Recovery in Athletic Performance</li>
                     <li>Nutrition</li>
                     <li>Biomechanics of Sprinting</li>
-                </ol> 
+                </ol>  */}
+            </div>
+            <div className="school">
+                <h3>Deep Dive Learning Academy</h3>
+                <div className="sub-title">Coding bootcamp graduate</div>
             </div>
         </div>
     )
 
     const technologiesContent = (
-        <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
+        <div className="about-item-container">
             <div className="technologies-container">
                 <div className="tech-container">
                     <FontAwesomeIcon className="tech-icon" icon={faHtml5}/>
@@ -159,9 +79,8 @@ export default function Portfolio(){
     )
 
     const mentalHealthContent = (
-        <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
-            <div className="school">
+        <div className="about-content-container">
+            {/* <div className="school">
                 <div className="underlined-title">Cohannet Academy</div>
                 <div className="sub-title">Residential Supervisor 2014-2022</div>
                 <div className="paragraph-title">Transferable Skills:</div>
@@ -173,14 +92,13 @@ export default function Portfolio(){
                     <br/>
                     The ability to identify patterns of behavior in the residents was crucial to managing their behavior. While the ability collaborate effectively accross deparrments greatly improved the efficay of our treatment plans.
                 </div>   
-            </div>
+            </div> */}
         </div>
     )
 
     const coachingContent = (
-        <div className="project-content" ref={ref}>
-            <FontAwesomeIcon className="project-close-icon" onClick={() => {handleUndisplayAboutItem()}}icon={faClose} />
-            <div className="school">
+        <div className="about-content-container">
+            {/* <div className="school">
                 <div className="underlined-title-small">Bryant University</div>
                 <div className="sub-title">Assistant Track and Field Coach 2018-2019</div>
                 <div className="underlined-title-small">Bridgewater State University </div>
@@ -193,9 +111,96 @@ export default function Portfolio(){
                 <div className="regular-paragraph-left">
                     The key to success as a coach was effective communication as well as aligning the goals of individual athletes with the goals of the team. In addition to the athletes, athletic trainers, strength coaches and even parents had to buy into the overall vision for the team. 
                 </div>   
-            </div>
+            </div> */}
         </div>
     )
+    const [isNavBarDisplayed, setIsNavBarDisplayed] = useState(false)
+    const [displayedAboutItem, setDisplayedAboutItem] = useState(educationContent)
+    const [isAboutItemDisplayed, setIsAboutItemDisplayed] =useState(false)
+
+    const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
+
+    window.onscroll = function(){
+        if(window.pageYOffset > 0){
+            let aboutSection = document.getElementsByClassName('section about')[0]
+            let aboutDistanceFromTop = aboutSection.getBoundingClientRect().top
+            let viewPortHeight = document.documentElement.clientHeight
+            let imgOpacity = map(aboutDistanceFromTop, viewPortHeight, 0, 1, 0)
+            document.getElementsByClassName('background')[0].style.opacity = imgOpacity
+        }
+    }
+
+    // useEffect(() => {
+    //         let touchStartX = 0
+    //         let touchEndX = 0
+                        
+    //         document.addEventListener('touchstart', (e) => {
+    //             touchStartX = e.changedTouches[0].screenX
+    //             console.log(touchStartX)
+    //         },false)
+
+    //         document.addEventListener('touchend', (e) => {
+    //             touchEndX = e.changedTouches[0].screenX
+    //             handleGesture()
+    //         },false)
+
+    //         function handleGesture(){
+    //             if(touchStartX < touchEndX){
+    //                 handleUndisplayAboutItem()
+    //                 console.log('swipe')
+    //             }else{
+    //                 console.log('no swipe')
+    //             }
+    //         }
+    // },[isAboutItemDisplayed])
+
+    // useEffect(() => {
+    //     const checkIfClickedOutside = e => {
+    //         if(isAboutItemDisplayed && ref.current && !ref.current.contains(e.target)){
+    //             handleUndisplayAboutItem()
+    //         }
+    //     }
+    //     document.addEventListener("mousedown", checkIfClickedOutside)
+    //     return() => {
+    //         document.removeEventListener("mousedown", checkIfClickedOutside)
+    //     }
+    // }, [isAboutItemDisplayed])
+    
+    const handleDisplayAboutItem = (displayedItem) => {
+        setIsAboutItemDisplayed(true)
+        const sections = document.querySelectorAll('.section')
+        sections.forEach(section => {
+            section.classList.add('moved-left')
+        })
+        setTimeout(() => {
+            setDisplayedAboutItem(displayedItem)
+            const distanceFromTop = window.scrollY
+            const displayContainer = document.querySelector('.project-content')
+            displayContainer.style.top = `calc(${distanceFromTop}px + 50vh)`    
+        }, 0)
+    }
+
+    const handleUndisplayAboutItem = () => {
+        setIsAboutItemDisplayed(false)
+        const sections = document.querySelectorAll('.section')
+        
+        sections.forEach(section => {
+            section.classList.remove('moved-left')
+        })
+
+        document.querySelector('.project-content').classList.add('to-side')
+        setTimeout(() => { 
+            setDisplayedAboutItem()
+        },1100)
+    }
+
+    const handleDisplayAboutContent = (content, id) => {
+        document.querySelector('.text-btn.active').classList.remove('active')
+        setTimeout(() =>{
+            setDisplayedAboutItem(content)
+            document.querySelector(`#${id}`).classList.add('active')
+        },100)
+    }
 
     return(
         <div className="outer">
@@ -256,7 +261,6 @@ export default function Portfolio(){
                 <div className="background"></div>
                 <div className="background-gradient"></div>
                 <div className="background-color"></div>
-                {displayedAboutItem}
                 <Element name="home" className="section landing">
                     <div className="landing-title">
                         Michael<br/>Hulme
@@ -269,37 +273,42 @@ export default function Portfolio(){
                     <div className="section-title">
                         about me
                     </div>
-                    <div className="section-container">
-                        <div className="paragraph-with-backdrop-boxshadow">
-                            <div className="underlined-title-small">what am i passionate about?</div>
-                            <div className="paragraph-no-margin">Learning, I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development there is always new technologies to learn or existing technologies to gain a deeper understanding of.
-                            </div>
-                            <div className="underlined-title-small">what makes me unquie?</div>
-                            <div className="paragraph-no-margin">
-                            My experience working in a psychiatric hospital. I honed a number of soft skills during this time, including active listening, setting up systems of communication, how to manage and motivate employees. 
-                            </div>
-                            <div className="underlined-title-small">what am i looking for?</div>
-                            <div className="paragraph-no-margin">
-                            A position that allows me to grow and expand my skill set while working with a creative group of people.
-                            </div>
+                    <div className="paragraph-with-backdrop-boxshadow">
+                            Learning, I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development there is always new technologies to learn or existing technologies to gain a deeper understanding of.
                         </div>
-                        <div className="about-item" onClick={() => handleDisplayAboutItem(educationContent)}>
-                            <img className = "about-img" src={albert} alt="albert" />
-                            education
-                        </div>
-                        <div className="about-item" onClick={() => handleDisplayAboutItem(technologiesContent)}>
-                            <img className = "about-img" src={robot} alt="robot" />
-                            technologies used
-                        </div>
-                        <div className="about-item" onClick={() => handleDisplayAboutItem(mentalHealthContent)}>
-                            <img className = "about-img" src={mentalHealth} alt="mental health" />
-                            mental health
-                        </div>
-                        <div className="about-item" onClick={() => handleDisplayAboutItem(coachingContent)}>
-                            <img className = "about-img" src={coaching} alt="coaching" />
-                            coaching
-                        </div>
+                    <div className="about-menu">
+                        <button 
+                            className="text-btn active"
+                            id="educationContent"
+                            onClick={() => handleDisplayAboutContent(educationContent,'educationContent')}
+                        >
+                            Education
+                        </button>
+                        <button 
+                            className="text-btn"
+                            id="technologiesContent"
+                            onClick={() => handleDisplayAboutContent(technologiesContent, 'technologiesContent')}
+                        >
+                            Technologies Used
+                        </button>
+                        <button 
+                            className="text-btn"
+                            id="mentalHealthContent"
+                            onClick={() => handleDisplayAboutContent(mentalHealthContent, 'mentalHealthContent')}
+                        >
+                            Mental Health
+                        </button>
+                        <button 
+                            className="text-btn"
+                            id="coachingContent"
+                            onClick={() => handleDisplayAboutContent(coachingContent, 'coachingContent')}
+                        >
+                            Coaching
+                        </button>
                     </div>
+                    <div className="about-item-border">
+                        {displayedAboutItem}
+                    </div>   
                 </Element>
                 <Element name="projects" className="section projects">
                     <div className="section-title">

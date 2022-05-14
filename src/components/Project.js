@@ -4,7 +4,6 @@ import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGit
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 export default function Project(props){
-    console.log(props)
 
     const handleLearnMore = () => {
         document.querySelector(`#caption${props.index}`).classList.toggle('show')

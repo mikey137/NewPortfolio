@@ -8,6 +8,7 @@
   --secondary-font: "Raleway Dots";
   --white-color: white;
   --bg-color: rgb(169, 169, 169);
+  --highlight-color: rgb(243, 136, 81);
 }
 
 .hidden {
@@ -223,6 +224,124 @@
 }
 
 /* ABOUT SECTION */
+.about-item-container {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes growShrinkContent {
+  from {
+    clip-path: inset(0px 0px 0px 0px);
+  }
+  to {
+    clip-path: inset(40% 45% 40% 45%);
+  }
+}
+
+@keyframes moveLeftBorder {
+  from {
+    transform: translate(0%, 0%);
+  }
+  to {
+    transform: translate(450%, -200%);
+  }
+}
+
+@keyframes moveRightBorder {
+  from {
+    transform: translate(0%, 0%);
+  }
+  to {
+    transform: translate(-450%, 200%);
+  }
+}
+
+.about-item-border {
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+  margin: 1rem;
+}
+
+.about-item-border:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10%;
+  height: 20%;
+  border-top: 2px solid var(--highlight-color);
+  border-right: 2px solid var(--highlight-color);
+  transition: 0.5s;
+  box-sizing: border-box;
+}
+
+.about-item-border:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  height: 20%;
+  border-bottom: 2px solid var(--highlight-color);
+  border-left: 2px solid var(--highlight-color);
+  transition: 0.5s;
+  box-sizing: border-box;
+}
+
+.school h3 {
+  color: var(--highlight-color);
+  letter-spacing: -1.875px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.text-btn {
+  background-color: transparent;
+  color: var(--white-color);
+  cursor: pointer;
+  border-style: none;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--secondary-font);
+  text-align: left;
+  margin: 0.25rem;
+  position: relative;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+}
+
+.text-btn.active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid var(--highlight-color);
+  border-left: 2px solid var(--highlight-color);
+  transition: 0.5s;
+  box-sizing: border-box;
+  transform-origin: left;
+}
+
+.text-btn.active:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-bottom: 2px solid var(--highlight-color);
+  border-right: 2px solid var(--highlight-color);
+  transition: 0.5s;
+  box-sizing: border-box;
+  transform-origin: right;
+}
 
 .paragraph-with-backdrop-boxshadow {
   padding: 0.6rem;
@@ -230,9 +349,7 @@
   width: 90%;
   max-width: 700px;
   font-size: 1.1rem;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
+  text-align: left;
 }
 
 .paragraph-no-margin {
