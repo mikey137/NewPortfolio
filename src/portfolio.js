@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react';
 import './portfolio.css'
-import ContactForm from './components/ContactForm';
+import ContactForm from './components/contactForm';
 import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
