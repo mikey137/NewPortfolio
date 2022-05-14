@@ -4,7 +4,7 @@ import ContactForm from './components/contactForm';
 import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
-import { faClose, faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { faClose, faArrowUp, faBars } from '@fortawesome/free-solid-svg-icons'
 import albert from './images/albert.png'
 import mentalHealth from './images/mentalHealth.png'
 import coaching from './images/tf.png'
@@ -206,9 +206,10 @@ export default function Portfolio(){
 
     return(
         <div className="outer">
-            <img 
+            <FontAwesomeIcon
                 onClick={() => setIsNavBarDisplayed(!isNavBarDisplayed)}
-                src={buddha} alt="buddha" className="navbar-icon" 
+                icon={isNavBarDisplayed ? faClose : faBars}
+                className="navbar-icon" 
             />
             <div className={isNavBarDisplayed ? "navbar-displayed" : "navbar"}>
                 <div className="navbar-title">contents</div>

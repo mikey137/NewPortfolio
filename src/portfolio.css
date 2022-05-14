@@ -196,6 +196,7 @@
   left: 1rem;
   z-index: 2;
   transition: transform 0.5s ease;
+  color: var(--white-color);
 }
 
 .navbar-icon:active {
@@ -228,16 +229,16 @@
 .section.about p {
   font-family: var(--primary-font);
   color: var(--white-color);
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 90vw;
   max-width: 600px;
-  text-align: left;
+  text-align: center;
 }
 .about-item-container {
   margin: 1rem;
   position: relative;
   overflow: hidden;
-  width: 90vw;
+  width: 85vw;
   max-width: 450px;
 }
 
@@ -334,7 +335,7 @@
   border-style: none;
   font-size: 1rem;
   font-weight: 700;
-  font-family: var(--secondary-font);
+  font-family: var(--primary-font);
   text-align: left;
   margin: 0.25rem;
   position: relative;
@@ -746,9 +747,9 @@ ol {
 /*Project Component */
 
 .project-container {
-  width: 80vw;
+  width: 85vw;
   max-width: 450px;
-  height: 750px;
+  height: 650px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -756,7 +757,7 @@ ol {
   border-radius: 7px;
   overflow: hidden;
   position: relative;
-  margin: 0.25rem;
+  margin: 0.5rem;
 }
 
 .project-container-caption {
