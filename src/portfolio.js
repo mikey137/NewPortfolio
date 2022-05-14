@@ -275,42 +275,46 @@ export default function Portfolio(){
                     <div className="section-title">
                         about me
                     </div>
-                    <div className="paragraph-with-backdrop-boxshadow">
-                            Learning, I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development there is always new technologies to learn or existing technologies to gain a deeper understanding of.
+                    <div className="about-wrapper">
+                        <p>
+                            I'm passionate about learning and how technology shapes society. Software development combines those passions. I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development there is always new technologies to learn or existing technologies to gain a deeper understanding of.
+                        </p>
+                        <div className="about-content-wrapper">
+                        <div className="about-menu">
+                            <button 
+                                className="text-btn active"
+                                id="educationContent"
+                                onClick={() => handleDisplayAboutContent(educationContent,'educationContent')}
+                            >
+                                Education
+                            </button>
+                            <button 
+                                className="text-btn"
+                                id="technologiesContent"
+                                onClick={() => handleDisplayAboutContent(technologiesContent, 'technologiesContent')}
+                            >
+                                Technologies Used
+                            </button>
+                            <button 
+                                className="text-btn"
+                                id="mentalHealthContent"
+                                onClick={() => handleDisplayAboutContent(mentalHealthContent, 'mentalHealthContent')}
+                            >
+                                Mental Health
+                            </button>
+                            <button 
+                                className="text-btn"
+                                id="coachingContent"
+                                onClick={() => handleDisplayAboutContent(coachingContent, 'coachingContent')}
+                            >
+                                Coaching
+                            </button>
                         </div>
-                    <div className="about-menu">
-                        <button 
-                            className="text-btn active"
-                            id="educationContent"
-                            onClick={() => handleDisplayAboutContent(educationContent,'educationContent')}
-                        >
-                            Education
-                        </button>
-                        <button 
-                            className="text-btn"
-                            id="technologiesContent"
-                            onClick={() => handleDisplayAboutContent(technologiesContent, 'technologiesContent')}
-                        >
-                            Technologies Used
-                        </button>
-                        <button 
-                            className="text-btn"
-                            id="mentalHealthContent"
-                            onClick={() => handleDisplayAboutContent(mentalHealthContent, 'mentalHealthContent')}
-                        >
-                            Mental Health
-                        </button>
-                        <button 
-                            className="text-btn"
-                            id="coachingContent"
-                            onClick={() => handleDisplayAboutContent(coachingContent, 'coachingContent')}
-                        >
-                            Coaching
-                        </button>
+                        <div className="about-item-border">
+                            {displayedAboutItem}
+                        </div>   
+                        </div>
                     </div>
-                    <div className="about-item-border">
-                        {displayedAboutItem}
-                    </div>   
                 </Element>
                 <Element name="projects" className="section projects">
                     <div className="section-title">
