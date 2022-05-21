@@ -18,10 +18,12 @@ export default function Project(props){
     return(
         <div 
             className="project-container"
-            style={{backgroundImage:`radial-gradient(at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%), url(${props.project.image})`}}
+            style={{backgroundImage:`linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%), url(${props.project.image})`}}
         >
             <div className="project-container-caption show" id={`caption${props.index}`}>
-                <h4>{props.project.title}</h4>
+                <div className="underlined-title">
+                    {props.project.title}
+                </div>
                 <p>{props.project.shortDescription}</p>
                 <button onClick={handleLearnMore} className="btn">Learn More</button>
             </div>
@@ -36,11 +38,11 @@ export default function Project(props){
                 <div className="regular-paragraph">
                     {props.project.longDescription}
                 </div>
-                {/* <div className="project-technologies-container">
+                <div className="project-technologies-container">
                     {props.project.iconsArray.map(icon => (
                         <FontAwesomeIcon key={icon} className="project-tech-icon" icon={icon}/>
                     ))}
-                </div> */}
+                </div>
                 <div className="btn-container">
                     <a href={props.project.siteLink} target="_blank" rel="noreferrer" className="btn">Visit Site</a>
                     <a href={props.project.codeLink} target="_blank" rel="noreferrer" className="btn">View Code</a>

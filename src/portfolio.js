@@ -212,7 +212,6 @@ export default function Portfolio(){
                 className="navbar-icon" 
             />
             <div className={isNavBarDisplayed ? "navbar-displayed" : "navbar"}>
-                <div className="navbar-title">contents</div>
                 <ol className="navbar-ol">
                     <li className="navbar-element">
                         <Link 
@@ -266,10 +265,10 @@ export default function Portfolio(){
                 <div className="background-color"></div>
                 <Element name="home" className="section landing">
                     <div className="landing-title">
-                        Michael<br/>Hulme
+                        Michael Hulme
                     </div>
                     <div className="landing-subtitle">
-                        Software<br/>Developer
+                        Software Developer
                     </div>
                 </Element>
                 <Element name="about" className="section about">
@@ -278,7 +277,7 @@ export default function Portfolio(){
                     </div>
                     <div className="about-wrapper">
                         <p>
-                            I'm passionate about learning and how technology shapes society. Software development combines those passions. I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development there is always new technologies to learn or existing technologies to gain a deeper understanding of.
+                            I'm passionate about learning and how technology shapes society. Software development combines those passions. I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development, there is always new technologies to learn or existing technologies to gain a deeper understanding of.
                         </p>
                         <div className="about-content-wrapper">
                         <div className="about-menu">
