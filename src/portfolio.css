@@ -237,7 +237,7 @@
 .section.about p {
   font-family: var(--secondary-font);
   color: var(--white-color);
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
   width: 85vw;
   max-width: 600px;
@@ -341,7 +341,7 @@
   font-weight: 800;
   text-transform: uppercase;
   text-align: left;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 
@@ -437,7 +437,7 @@
   text-transform: uppercase;
   font-family: var(--secondary-font);
   color: var(--white-color);
-  font-size: 0.75rem;
+  font-size: 1rem;
   text-align: left;
   margin-bottom: 1rem;
 }
@@ -472,7 +472,7 @@ ol {
 
 .tech-icon {
   color: var(--white-color);
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .paragraph-title {
@@ -703,7 +703,7 @@ ol {
 .btn {
   font-family: var(--title-font);
   text-transform: uppercase;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   background: transparent;
   color: var(--white-color);
   letter-spacing: 3px;
