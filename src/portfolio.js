@@ -325,14 +325,14 @@ export default function Portfolio(){
                                 </div>
                                 <div className="school">
                                     <h3>Communication</h3>
-                                    <div className="sub-title">
-
+                                    <div className= 'soft-skills-p'>
+                                        I have seven years of experience working at a psychiatric hospital. The clients I worked with were often limited in their ability to communicate, they struggled to understand others and express themselves in a meaningful way. This experience helped me gain a deeper understanding of effective communication.  
                                     </div>
                                 </div>
                                 <div className="school">
                                     <h3>Problem Solving</h3>
-                                    <div className="sub-title">
-                                        
+                                    <div className="soft-skills-p">
+                                        I enjoy working on difficult and challenging problems. As an undergrad I did a research project on Fermat's Last Theorom, in part because it was one of the most challenging problems in mathematics. 
                                     </div>
                                 </div>
                             </div>
@@ -353,7 +353,6 @@ export default function Portfolio(){
                     <div className="section-title">
                         contact
                     </div>
-                    <p className="title-sub-text">email me! maybe?</p>
                     <ContactForm></ContactForm>
                 </Element>
             </div>

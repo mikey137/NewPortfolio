@@ -1,4 +1,5 @@
 import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
+import { SuperCardsImg } from './images/supercards.png'
 
 const ProjectsArray = [
     {
@@ -27,17 +28,7 @@ const ProjectsArray = [
         siteLink: 'https://mikey137.github.io/EmotionsAPI/index.html',
         codeLink: 'https://github.com/mikey137/EmotionsAPI',
         iconsArray:[faHtml5, faCss3Alt, faJs,faBootstrap, faGithub]
-    },
-    {
-        title: 'SuperCards NFT',
-        image: 'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80',
-        shortDescription: 'NFT based Card Game',
-        longDescription: "This project was a collaboration, focusing developing the soft skills involved in software development. Communicating with other people, sharing ideas, and coming up with a product everyone is happy with. We used css and react to algorithmically generate unique smiley faces. The faces were attached NFTs and posted on OpenSea. ",
-        siteLink: 'http://supercardsnft.herokuapp.com/',
-        codeLink: 'https://github.com/Ben8842/asg',
-        iconsArray:[faReact, faCss3Alt,faGithub]
     }
-
 ]
 
 export default ProjectsArray

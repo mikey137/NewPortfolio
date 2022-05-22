@@ -30,7 +30,7 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-  background-image: url(/src/images/smallzentree.jpg);
+  background-image: url(/src/images/zentree.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right center;
@@ -242,7 +242,16 @@
   width: 85vw;
   max-width: 600px;
   text-align: left;
-  padding: 1rem;
+  padding: 0.5rem;
+}
+
+.soft-skills-p {
+  font-family: var(--secondary-font);
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 1rem;
 }
 
 .about-me-p-wrapper {
@@ -302,8 +311,8 @@
 }
 
 .about-item-border {
-  height: fit-content;
-  width: fit-content;
+  max-width: 400px;
+  max-height: 600px;
   position: relative;
   margin: 1rem;
   padding: 1rem;
@@ -314,8 +323,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 10%;
-  height: 20%;
+  width: 2rem;
+  height: 2rem;
   border-top: 2px solid var(--highlight-color);
   border-right: 2px solid var(--highlight-color);
   transition: 0.5s;
@@ -327,8 +336,8 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 10%;
-  height: 20%;
+  width: 2rem;
+  height: 2rem;
   border-bottom: 2px solid var(--highlight-color);
   border-left: 2px solid var(--highlight-color);
   transition: 0.5s;
@@ -680,7 +689,7 @@ ol {
   border: none;
   padding: 1%;
   font-size: 20px;
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
 }
 
 .form__input:focus {
@@ -692,7 +701,7 @@ ol {
   color: rgba(38, 38, 38, 0.8);
   padding: 1%;
   font-size: 20px;
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
 }
 
 .field {
@@ -746,7 +755,7 @@ ol {
   color: red;
   background-color: rgba(248, 248, 255, 0.8);
   text-transform: uppercase;
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   letter-spacing: 1px;
   width: 100%;
   max-width: 500px;
@@ -764,7 +773,7 @@ ol {
   position: absolute;
   bottom: 50px;
   right: 50px;
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   text-transform: uppercase;
   animation: sentAlert 6s ease-in-out forwards;
 }
