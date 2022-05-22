@@ -30,9 +30,10 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-  background-image: url(/src/images/water.jpg);
+  background-image: url(/src/images/smallzentree.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: right center;
   z-index: -2;
 }
 
@@ -42,11 +43,10 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-
   background-image: linear-gradient(
     315deg,
-    rgba(24, 27, 27, 0.8) 0%,
-    rgba(96, 107, 108, 0.8) 74%
+    rgba(24, 27, 27, 0.4) 0%,
+    rgba(96, 107, 108, 0.4) 74%
   );
   background-size: cover;
   background-repeat: no-repeat;
@@ -242,9 +242,13 @@
   width: 85vw;
   max-width: 600px;
   text-align: left;
+  padding: 1rem;
+}
+
+.about-me-p-wrapper {
   border-top: 2px solid var(--highlight-color);
   border-bottom: 2px solid var(--highlight-color);
-  padding: 1rem;
+  margin-bottom: 1rem;
 }
 .about-item-container {
   margin: 1rem;
@@ -256,16 +260,16 @@
 
 .about-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .about-content-wrapper {
   width: 90vw;
-  max-width: 600px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -302,6 +306,7 @@
   width: fit-content;
   position: relative;
   margin: 1rem;
+  padding: 1rem;
 }
 
 .about-item-border:before {
@@ -331,12 +336,12 @@
 }
 
 .school h3 {
-  color: var(--highlight-color);
-  font-family: var(--title-font);
+  color: var(--white-color);
+  font-family: var(--secondary-font);
   font-weight: 800;
   text-transform: uppercase;
-  text-align: center;
-  font-size: 1.5rem;
+  text-align: left;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -348,7 +353,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   font-family: var(--secondary-font);
-  text-align: left;
+  text-align: center;
   margin: 0.25rem;
   position: relative;
   text-transform: uppercase;
@@ -432,8 +437,9 @@
   text-transform: uppercase;
   font-family: var(--secondary-font);
   color: var(--white-color);
-  letter-spacing: 1px;
-  font-size: 1rem;
+  font-size: 0.75rem;
+  text-align: left;
+  margin-bottom: 1rem;
 }
 
 .list-title {
@@ -791,7 +797,7 @@ ol {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  transform: translateY(100%);
+  transform: translateY(-100%);
   transition: transform 1s ease-in-out;
 }
 
@@ -841,7 +847,7 @@ ol {
   left: 0;
   top: 0;
   backdrop-filter: blur(5px);
-  transform: translateY(-100%);
+  transform: translateY(100%);
   transition: transform 1s ease-in-out;
 }
 
@@ -878,6 +884,9 @@ ol {
 }
 
 @media only screen and (min-width: 600px) {
+  .background {
+    background-image: url("./images/zentree.jpg");
+  }
   .landing-title {
     font-size: 7.5rem;
   }

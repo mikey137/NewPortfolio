@@ -1,7 +1,7 @@
 import react from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function Project(props){
 
@@ -28,10 +28,6 @@ export default function Project(props){
                 <button onClick={handleLearnMore} className="btn">Learn More</button>
             </div>
             <div className="project-content" id={`content${props.index}`}>
-                <FontAwesomeIcon 
-                    className="project-close-icon" 
-                    onClick={() => {handleMoveContentUp()}}icon={faArrowUp}
-                />
                 <div className="underlined-title">
                     {props.project.title}
                 </div>
@@ -47,6 +43,10 @@ export default function Project(props){
                     <a href={props.project.siteLink} target="_blank" rel="noreferrer" className="btn">Visit Site</a>
                     <a href={props.project.codeLink} target="_blank" rel="noreferrer" className="btn">View Code</a>
                 </div>
+                <FontAwesomeIcon 
+                    className="project-close-icon" 
+                    onClick={() => {handleMoveContentUp()}}icon={faArrowDown}
+                />
             </div>   
         </div>
     )

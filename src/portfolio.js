@@ -19,64 +19,13 @@ export default function Portfolio(){
 
     const educationContent = (
         <div className="about-item-container">
-            <div className="school">
-                <h3>University of North Carolina, Wilmington</h3>
-                <div className="sub-title">Bachelor of Science in Applied Mathematics</div>
-                {/* <div className="list-title">Area's of Study:</div>
-                <ol id="studies-list">
-                    <li>Fermat's Last Theorem for the case n=3</li>
-                    <li>Partial Differential Equations</li>
-                    <li>Vector Calculus</li>
-                    <li>Abstract Algebra</li>
-                </ol>  */}
-            </div>
-            <div className="school">
-                <h3>Bridgewater State University</h3>
-                <div className="sub-title">Master of Science in Strength and Conditioning</div>
-                
-                {/* <div className="list-title">Area's of Study:</div>
-                <ol id="studies-list">
-                    <li>Olympic Lifting for College Athletes</li>
-                    <li>Rest and Recovery in Athletic Performance</li>
-                    <li>Nutrition</li>
-                    <li>Biomechanics of Sprinting</li>
-                </ol>  */}
-            </div>
-            <div className="school">
-                <h3>Deep Dive Learning Academy</h3>
-                <div className="sub-title">Coding bootcamp graduate</div>
-            </div>
+            
         </div>
     )
 
     const technologiesContent = (
         <div className="about-item-container">
-            <div className="technologies-container">
-                <div className="tech-container">
-                    <FontAwesomeIcon className="tech-icon" icon={faHtml5}/>
-                    <div className="regular-paragraph">html</div>
-                </div>
-                <div className="tech-container">
-                    <FontAwesomeIcon className="tech-icon" icon={faCss3Alt}/>
-                    <div className="regular-paragraph">css</div>
-                </div>
-                <div className="tech-container">
-                    <FontAwesomeIcon className="tech-icon" icon={faJs}/>
-                    <div className="regular-paragraph">javascript</div>
-                </div>
-                <div className="tech-container">
-                    <FontAwesomeIcon className="tech-icon" icon={faReact}/>
-                    <div className="regular-paragraph">react</div>
-                </div>
-                <div className="tech-container">
-                    <FontAwesomeIcon className="tech-icon" icon={faGitAlt}/>
-                    <div className="regular-paragraph">github</div>
-                </div>
-                <div className="tech-container">
-                    <FontAwesomeIcon className="tech-icon" icon={faNodeJs}/>
-                    <div className="regular-paragraph">nodejs</div>
-                </div>    
-            </div>
+            
         </div>
     )
 
@@ -127,8 +76,8 @@ export default function Portfolio(){
             let aboutSection = document.getElementsByClassName('section about')[0]
             let aboutDistanceFromTop = aboutSection.getBoundingClientRect().top
             let viewPortHeight = document.documentElement.clientHeight
-            let imgOpacity = map(aboutDistanceFromTop, viewPortHeight, 0, 1, 0)
-            document.getElementsByClassName('background')[0].style.opacity = imgOpacity
+            let imgOpacity = map(aboutDistanceFromTop, viewPortHeight, 1, 1, 0.15)
+            document.getElementsByClassName('background')[0].style.opacity = imgOpacity > 0.15 ? imgOpacity : 0.15
         }
     }
 
@@ -276,43 +225,117 @@ export default function Portfolio(){
                         about me
                     </div>
                     <div className="about-wrapper">
-                        <p>
-                            I'm passionate about learning and how technology shapes society. Software development combines those passions. I want to understand how things work and I’m curious about what’s going on behind the scenes. With software development, there is always new technologies to learn or existing technologies to gain a deeper understanding of.
-                        </p>
-                        <div className="about-content-wrapper">
-                        <div className="about-menu">
-                            <button 
-                                className="text-btn active"
-                                id="educationContent"
-                                onClick={() => handleDisplayAboutContent(educationContent,'educationContent')}
-                            >
-                                Education
-                            </button>
-                            <button 
-                                className="text-btn"
-                                id="technologiesContent"
-                                onClick={() => handleDisplayAboutContent(technologiesContent, 'technologiesContent')}
-                            >
-                                Technologies Used
-                            </button>
-                            <button 
-                                className="text-btn"
-                                id="mentalHealthContent"
-                                onClick={() => handleDisplayAboutContent(mentalHealthContent, 'mentalHealthContent')}
-                            >
-                                Mental Health
-                            </button>
-                            <button 
-                                className="text-btn"
-                                id="coachingContent"
-                                onClick={() => handleDisplayAboutContent(coachingContent, 'coachingContent')}
-                            >
-                                Coaching
-                            </button>
+                        <div className="about-me-p-wrapper">
+                            <p>
+                                I’m a naturally curious person who is passionate about understanding how things work.
+                            </p>
+                            <p>
+                                Currently I’m trying to learn everything I can about UI design, react, node, databases, and how they are all interconnected.
+                            </p>
+                            <p>
+                                Outside of coding you’ll find me dreaming about basketball and jiu jitsu or spending time with my kids.
+                            </p>
                         </div>
-                        <div className="about-item-border">
-                            {displayedAboutItem}
-                        </div>   
+                        <div className="about-content-wrapper">
+                            {/* <div className="about-menu">
+                                <button 
+                                    className="text-btn active"
+                                    id="educationContent"
+                                    onClick={() => handleDisplayAboutContent(educationContent,'educationContent')}
+                                >
+                                    Education
+                                </button>
+                                <button 
+                                    className="text-btn"
+                                    id="technologiesContent"
+                                    onClick={() => handleDisplayAboutContent(technologiesContent, 'technologiesContent')}
+                                >
+                                    Technologies Used
+                                </button>
+                                <button 
+                                    className="text-btn"
+                                    id="mentalHealthContent"
+                                    onClick={() => handleDisplayAboutContent(mentalHealthContent, 'mentalHealthContent')}
+                                >
+                                    Mental Health
+                                </button>
+                                <button 
+                                    className="text-btn"
+                                    id="coachingContent"
+                                    onClick={() => handleDisplayAboutContent(coachingContent, 'coachingContent')}
+                                >
+                                    Coaching
+                                </button>
+                            </div> */}
+                            <div className="about-item-border">
+                                <div className="underlined-title">
+                                    education
+                                </div>
+                                <div className="school">
+                                    <h3>University of North Carolina, Wilmington</h3>
+                                    <div className="sub-title">
+                                        Bachelor of Science in Applied Mathematics
+                                    </div>
+                                </div>
+                                <div className="school">
+                                    <h3>Bridgewater State University</h3>
+                                    <div className="sub-title">
+                                        Master of Science in Strength and Conditioning
+                                    </div>
+                                </div>
+                                <div className="school">
+                                    <h3>Deep Dive Learning Academy</h3>
+                                    <div className="sub-title">Coding bootcamp graduate</div>
+                                </div>
+                            </div>  
+                            <div className="about-item-border">
+                                <div className="underlined-title">
+                                    Technologies Used
+                                </div>
+                                <div className="technologies-container">
+                                    <div className="tech-container">
+                                        <FontAwesomeIcon className="tech-icon" icon={faHtml5}/>
+                                        <div className="regular-paragraph">html</div>
+                                    </div>
+                                    <div className="tech-container">
+                                        <FontAwesomeIcon className="tech-icon" icon={faCss3Alt}/>
+                                        <div className="regular-paragraph">css</div>
+                                    </div>
+                                    <div className="tech-container">
+                                        <FontAwesomeIcon className="tech-icon" icon={faJs}/>
+                                        <div className="regular-paragraph">javascript</div>
+                                    </div>
+                                    <div className="tech-container">
+                                        <FontAwesomeIcon className="tech-icon" icon={faReact}/>
+                                        <div className="regular-paragraph">react</div>
+                                    </div>
+                                    <div className="tech-container">
+                                        <FontAwesomeIcon className="tech-icon" icon={faGitAlt}/>
+                                        <div className="regular-paragraph">github</div>
+                                    </div>
+                                    <div className="tech-container">
+                                        <FontAwesomeIcon className="tech-icon" icon={faNodeJs}/>
+                                        <div className="regular-paragraph">nodejs</div>
+                                    </div>    
+                                </div>
+                            </div> 
+                            <div className="about-item-border">
+                                <div className="underlined-title">
+                                    soft Skills
+                                </div>
+                                <div className="school">
+                                    <h3>Communication</h3>
+                                    <div className="sub-title">
+
+                                    </div>
+                                </div>
+                                <div className="school">
+                                    <h3>Problem Solving</h3>
+                                    <div className="sub-title">
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </Element>
