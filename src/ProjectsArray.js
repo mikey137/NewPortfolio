@@ -1,12 +1,11 @@
-import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
-import { SuperCardsImg } from './images/supercards.png'
+import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap} from '@fortawesome/free-brands-svg-icons'
 
 const ProjectsArray = [
     {
         title: 'Little Legumes',
         image: 'https://images.unsplash.com/photo-1571211468362-33f20cb1982f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fGtpZHMlMjBwbGF5aW5nfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60',
         shortDescription: 'is a photo sharing app, designed to help parents track all of there kids presious moments.',
-        longDescription: "Little Legumes is a clone of the Tiny Beans App. The main feature that is recreated is an infinitely scrolling calendar which allows the user to save photo's or moments from each day. Additionally users are able to select moments and easily email them to a list of family and friends.",
+        longDescription: "Little Legumes is a clone of the Tiny Bean's App. The main feature that is recreated is an infinitely scrolling calendar which allows the user to save photos or moments from each day. Additionally users are able to select moments and easily email them to a list of family and friends.",
         siteLink: 'https://little-legumes.herokuapp.com/',
         codeLink: 'https://github.com/mikey137/Little_Legumes_App',
         iconsArray:[faReact, faCss3Alt, faNode, faGithub]

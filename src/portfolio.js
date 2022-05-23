@@ -1,74 +1,16 @@
-import {React, useState, useEffect} from 'react';
+import {React, useState} from 'react';
 import './portfolio.css'
 import ContactForm from './components/contactForm';
 import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faReact, faCss3Alt, faNode, faHtml5, faJs, faBootstrap, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
-import { faClose, faArrowUp, faBars } from '@fortawesome/free-solid-svg-icons'
-import albert from './images/albert.png'
-import mentalHealth from './images/mentalHealth.png'
-import coaching from './images/tf.png'
-import robot from './images/robotWhite.png'
-import buddha from './images/buddha3.png'
-import profilePic from './images/profilePic.jpeg'
+import { faReact, faCss3Alt, faHtml5, faJs, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
+import { faClose, faBars } from '@fortawesome/free-solid-svg-icons'
 import Project from './components/Project'
 import ProjectsArray from './ProjectsArray'
 
-
 export default function Portfolio(){
-
-    const educationContent = (
-        <div className="about-item-container">
-            
-        </div>
-    )
-
-    const technologiesContent = (
-        <div className="about-item-container">
-            
-        </div>
-    )
-
-    const mentalHealthContent = (
-        <div className="about-item-container">
-            {/* <div className="school">
-                <div className="underlined-title">Cohannet Academy</div>
-                <div className="sub-title">Residential Supervisor 2014-2022</div>
-                <div className="paragraph-title">Transferable Skills:</div>
-                <div className="regular-paragraph-left">communication, pattern recognition</div>
-                <div className="paragraph-title">Job Description:</div>
-                <div className="regular-paragraph-left">
-                    All things related to running an Intensive Residential Treatment Program for teenage girls who struggle with suicidal ideation, eating disorders, or other self injurious behavior. My primary responsibilities were to manage the staff on shift, intervine when a resident is in crisis, and facilitate communication between the various departments in the program.  
-                    <br/>
-                    <br/>
-                    The ability to identify patterns of behavior in the residents was crucial to managing their behavior. While the ability collaborate effectively accross deparrments greatly improved the efficay of our treatment plans.
-                </div>   
-            </div> */}
-        </div>
-    )
-
-    const coachingContent = (
-        <div className="about-item-container">
-            {/* <div className="school">
-                <div className="underlined-title-small">Bryant University</div>
-                <div className="sub-title">Assistant Track and Field Coach 2018-2019</div>
-                <div className="underlined-title-small">Bridgewater State University </div>
-                <div className="sub-title">Assistant Track and Field Coach 2014-2018</div>
-                <div className="underlined-title-small">University of Massachusetts, Boston</div>
-                <div className="sub-title">Assistant Track and Field Coach 2012-2014</div>
-                <div className="paragraph-title">Transferable Skills:</div>
-                <div className="regular-paragraph-left">communication, pattern recognition</div>
-                <div className="paragraph-title">Job Description:</div>
-                <div className="regular-paragraph-left">
-                    The key to success as a coach was effective communication as well as aligning the goals of individual athletes with the goals of the team. In addition to the athletes, athletic trainers, strength coaches and even parents had to buy into the overall vision for the team. 
-                </div>   
-            </div> */}
-        </div>
-    )
     const [isNavBarDisplayed, setIsNavBarDisplayed] = useState(false)
-    const [displayedAboutItem, setDisplayedAboutItem] = useState(educationContent)
-    const [isAboutItemDisplayed, setIsAboutItemDisplayed] =useState(false)
-
+   
     const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
 
     window.onscroll = function(){
@@ -79,78 +21,6 @@ export default function Portfolio(){
             let imgOpacity = map(aboutDistanceFromTop, viewPortHeight, 1, 1, 0.15)
             document.getElementsByClassName('background')[0].style.opacity = imgOpacity > 0.15 ? imgOpacity : 0.15
         }
-    }
-
-    // useEffect(() => {
-    //         let touchStartX = 0
-    //         let touchEndX = 0
-                        
-    //         document.addEventListener('touchstart', (e) => {
-    //             touchStartX = e.changedTouches[0].screenX
-    //             console.log(touchStartX)
-    //         },false)
-
-    //         document.addEventListener('touchend', (e) => {
-    //             touchEndX = e.changedTouches[0].screenX
-    //             handleGesture()
-    //         },false)
-
-    //         function handleGesture(){
-    //             if(touchStartX < touchEndX){
-    //                 handleUndisplayAboutItem()
-    //                 console.log('swipe')
-    //             }else{
-    //                 console.log('no swipe')
-    //             }
-    //         }
-    // },[isAboutItemDisplayed])
-
-    // useEffect(() => {
-    //     const checkIfClickedOutside = e => {
-    //         if(isAboutItemDisplayed && ref.current && !ref.current.contains(e.target)){
-    //             handleUndisplayAboutItem()
-    //         }
-    //     }
-    //     document.addEventListener("mousedown", checkIfClickedOutside)
-    //     return() => {
-    //         document.removeEventListener("mousedown", checkIfClickedOutside)
-    //     }
-    // }, [isAboutItemDisplayed])
-    
-    const handleDisplayAboutItem = (displayedItem) => {
-        setIsAboutItemDisplayed(true)
-        const sections = document.querySelectorAll('.section')
-        sections.forEach(section => {
-            section.classList.add('moved-left')
-        })
-        setTimeout(() => {
-            setDisplayedAboutItem(displayedItem)
-            const distanceFromTop = window.scrollY
-            const displayContainer = document.querySelector('.project-content')
-            displayContainer.style.top = `calc(${distanceFromTop}px + 50vh)`    
-        }, 0)
-    }
-
-    const handleUndisplayAboutItem = () => {
-        setIsAboutItemDisplayed(false)
-        const sections = document.querySelectorAll('.section')
-        
-        sections.forEach(section => {
-            section.classList.remove('moved-left')
-        })
-
-        document.querySelector('.project-content').classList.add('to-side')
-        setTimeout(() => { 
-            setDisplayedAboutItem()
-        },1100)
-    }
-
-    const handleDisplayAboutContent = (content, id) => {
-        document.querySelector('.text-btn.active').classList.remove('active')
-        setTimeout(() =>{
-            setDisplayedAboutItem(content)
-            document.querySelector(`#${id}`).classList.add('active')
-        },100)
     }
 
     return(
@@ -237,36 +107,6 @@ export default function Portfolio(){
                             </p>
                         </div>
                         <div className="about-content-wrapper">
-                            {/* <div className="about-menu">
-                                <button 
-                                    className="text-btn active"
-                                    id="educationContent"
-                                    onClick={() => handleDisplayAboutContent(educationContent,'educationContent')}
-                                >
-                                    Education
-                                </button>
-                                <button 
-                                    className="text-btn"
-                                    id="technologiesContent"
-                                    onClick={() => handleDisplayAboutContent(technologiesContent, 'technologiesContent')}
-                                >
-                                    Technologies Used
-                                </button>
-                                <button 
-                                    className="text-btn"
-                                    id="mentalHealthContent"
-                                    onClick={() => handleDisplayAboutContent(mentalHealthContent, 'mentalHealthContent')}
-                                >
-                                    Mental Health
-                                </button>
-                                <button 
-                                    className="text-btn"
-                                    id="coachingContent"
-                                    onClick={() => handleDisplayAboutContent(coachingContent, 'coachingContent')}
-                                >
-                                    Coaching
-                                </button>
-                            </div> */}
                             <div className="about-item-border">
                                 <div className="underlined-title">
                                     education
