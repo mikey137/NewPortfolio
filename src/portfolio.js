@@ -4,7 +4,7 @@ import ContactForm from './components/contactForm';
 import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faCss3Alt, faHtml5, faJs, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
-import { faClose, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faClose, faBars, faDatabase } from '@fortawesome/free-solid-svg-icons'
 import Project from './components/Project'
 import ProjectsArray from './ProjectsArray'
 
@@ -156,6 +156,10 @@ export default function Portfolio(){
                                     <div className="tech-container">
                                         <FontAwesomeIcon className="tech-icon" icon={faNodeJs}/>
                                         <div className="regular-paragraph">nodejs</div>
+                                    </div>   
+                                    <div className="tech-container">
+                                        <FontAwesomeIcon className="tech-icon" icon={faDatabase}/>
+                                        <div className="regular-paragraph">Postgres SQL &amp;  MongoDb</div>
                                     </div>    
                                 </div>
                             </div> 
