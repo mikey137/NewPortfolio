@@ -5,6 +5,7 @@ import { Link, Element } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faCss3Alt, faHtml5, faJs, faGitAlt, faNodeJs} from '@fortawesome/free-brands-svg-icons'
 import { faClose, faBars, faDatabase } from '@fortawesome/free-solid-svg-icons'
+import headShot from './images/headShot.jpg'
 import Project from './components/Project'
 import ProjectsArray from './ProjectsArray'
 

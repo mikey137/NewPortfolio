@@ -474,6 +474,7 @@ ol {
 .social-media-icon {
   color: var(--white-color);
   font-size: 3rem;
+  transition: color 0.25s ease-in-out;
 }
 
 .social-media-icon:active {
@@ -688,5 +689,25 @@ ol {
   .btn:hover {
     transform: scale(1.1);
     letter-spacing: 5px;
+  }
+
+  .social-media-icon:hover {
+    animation: iconRotate 1.5s ease-in-out forwards;
+    color: var(--highlight-color);
+  }
+}
+
+@keyframes iconRotate {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  33% {
+    transform: rotate(-60deg) scale(1.2);
+  }
+  66% {
+    transform: rotate(60deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(0) scale(1);
   }
 }
