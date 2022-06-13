@@ -98,13 +98,13 @@ export default function Portfolio(){
                     <div className="about-wrapper">
                         <div className="about-me-p-wrapper">
                             <p>
-                                I’m a naturally curious person who is passionate about understanding how things work.
+                                I am an inquisitive and analytical person who is innately driven to understand how things work.
                             </p>
                             <p>
-                                Currently I’m trying to learn everything I can about UI design, react, node, databases, and how they are all interconnected.
+                                My current areas of focus are UI design, react, node, databases, and how they interconnect. 
                             </p>
                             <p>
-                                Outside of coding you’ll find me dreaming about basketball and jiu jitsu or spending time with my kids.
+                                When I’m not coding you’ll find me dreaming about basketball, jiu jitsu or spending time with my kids.
                             </p>
                         </div>
                         <div className="about-content-wrapper">
@@ -171,13 +171,13 @@ export default function Portfolio(){
                                 <div className="school">
                                     <h3>Communication</h3>
                                     <div className= 'soft-skills-p'>
-                                        I have seven years of experience working at a psychiatric hospital. The clients I worked with were often limited in their ability to communicate, they struggled to understand others and express themselves in a meaningful way. This experience helped me gain a deeper understanding of effective communication.  
+                                        I have seven years of experience working at a psychiatric hospital. The clients I worked with were often limited in their ability to communicate; they struggled to understand others and express themselves in a meaningful way. This experience helped me gain a deeper understanding of effective communication.  
                                     </div>
                                 </div>
                                 <div className="school">
                                     <h3>Problem Solving</h3>
                                     <div className="soft-skills-p">
-                                        I enjoy working on difficult and challenging problems. As an undergrad I did a research project on Fermat's Last Theorom, in part because it was one of the most challenging problems in mathematics. 
+                                        I enjoy working on difficult and challenging problems. As an undergraduate my research project focused on Fermat's Last Theorem, in part because it was one of the most challenging problems in mathematics and I find joy in working to solve complex problems. 
                                     </div>
                                 </div>
                             </div>

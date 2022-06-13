@@ -116,7 +116,7 @@ export default function ContactForm() {
                 <a target="_blank" rel="noreferrer" href="https://github.com/mikey137">
                     <FontAwesomeIcon className='social-media-icon' icon={ faGithub }/>
                 </a>
-                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/michael-hulme-63b81a214/">
+                <a target="_blank" rel="noreferrer" href="www.linkedin.com/in/mhulme137">
                     <FontAwesomeIcon className='social-media-icon' icon={ faLinkedin }/>
                 </a>
             </div>

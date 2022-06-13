@@ -4,7 +4,7 @@ const ProjectsArray = [
     {
         title: 'Little Legumes',
         image: 'https://images.unsplash.com/photo-1571211468362-33f20cb1982f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fGtpZHMlMjBwbGF5aW5nfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-        shortDescription: 'is a photo sharing app, designed to help parents track all of there kids presious moments.',
+        shortDescription: 'is a photo sharing app, designed to help parents track all of there kids precious moments.',
         longDescription: "Little Legumes is a clone of the Tiny Bean's App. The main feature that is recreated is an infinitely scrolling calendar which allows the user to save photos or moments from each day. Additionally users are able to select moments and easily email them to a list of family and friends.",
         siteLink: 'https://little-legumes.herokuapp.com/',
         codeLink: 'https://github.com/mikey137/Little_Legumes_App',
@@ -23,7 +23,7 @@ const ProjectsArray = [
         title: 'Emotional Concepts',
         image: 'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80',
         shortDescription: 'is an interactive emotions wheel.',
-        longDescription: "This project is an interactive emotions wheel. It can be used by clinicians, occupational therapists, teachers, and parents, to help facilitate conversations about different emotional concepts with their clients, students, kids, ect. The app provides definitions, images, and videos of a variety of different emotions.",
+        longDescription: "This project is an interactive emotions wheel. It can be used by clinicians, occupational therapists, teachers, and parents, to help facilitate conversations about different emotional concepts with their clients, students, kids, etc. The app provides definitions, images, and videos of a variety of different emotions.",
         siteLink: 'https://mikey137.github.io/EmotionsAPI/index.html',
         codeLink: 'https://github.com/mikey137/EmotionsAPI',
         iconsArray:[faHtml5, faCss3Alt, faJs,faBootstrap, faGithub]
