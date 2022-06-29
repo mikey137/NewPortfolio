@@ -101,7 +101,7 @@ export default function Portfolio(){
                                 I am an inquisitive and analytical person who is innately driven to understand how things work.
                             </p>
                             <p>
-                                My current areas of focus are UI design, react, node, databases, and how they interconnect. 
+                                My current areas of focus are UI design, React, Node, databases, and how they interconnect. 
                             </p>
                             <p>
                                 When I’m not coding you’ll find me dreaming about basketball, jiu jitsu or spending time with my kids.
@@ -177,7 +177,7 @@ export default function Portfolio(){
                                 <div className="school">
                                     <h3>Problem Solving</h3>
                                     <div className="soft-skills-p">
-                                        I enjoy working on difficult and challenging problems. As an undergraduate my research project focused on Fermat's Last Theorem, in part because it was one of the most challenging problems in mathematics and I find joy in working to solve complex problems. 
+                                        I enjoy working on difficult and challenging problems. As an undergraduate, my research project focused on Fermat's Last Theorem, in part because it was one of the most challenging problems in mathematics and I find joy in working to solve complex problems. 
                                     </div>
                                 </div>
                             </div>
